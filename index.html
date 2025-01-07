@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>GPA Calculator</h1>
+
+        <div class="options">
+            <button id="calculateSGPA">SGPA</button>
+            <p class="info">SGPA is for one semester only.</p>
+            <button id="calculateCGPA">CGPA</button>
+            <p class="info">CGPA is for all semesters.</p>
+        </div>
+
+        <!-- SGPA Section -->
+        <div id="sgpaSection" class="hidden">
+            <h2>Calculate SGPA</h2>
+            <div class="form">
+                <label for="course">Course Name:</label>
+                <input type="text" id="course" placeholder="Enter course name">
+                
+                <label for="grade">Grade:</label>
+                <select id="grade">
+                    <option value="4.00">A+ / A (4.00)</option>
+                    <option value="3.67">A- (3.67)</option>
+                    <option value="3.33">B+ (3.33)</option>
+                    <option value="3.00">B (3.00)</option>
+                    <option value="2.67">B- (2.67)</option>
+                    <option value="2.33">C+ (2.33)</option>
+                    <option value="2.00">C (2.00)</option>
+                    <option value="1.67">C- (1.67)</option>
+                    <option value="1.33">D+ (1.33)</option>
+                    <option value="1.00">D (1.00)</option>
+                    <option value="0.00">F (0.00)</option>
+                </select>
+                
+                <label for="credit">Credit Hours:</label>
+                <input type="number" id="credit" placeholder="Enter credit hours">
+
+                <button id="addCourse">Add Course</button>
+            </div>
+
+            <table id="courseTable">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Grade</th>
+                        <th>Credit Hours</th>
+                        <th>Points Earned</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically added here -->
+                </tbody>
+            </table>
+
+            <button id="calculateSGPAButton">Calculate SGPA</button>
+            <p id="gpaResult"></p>
+        </div>
+
+        <!-- CGPA Section -->
+        <div id="cgpaSection" class="hidden">
+            <h2>Calculate CGPA</h2>
+            <label for="semesters">Number of Semesters:</label>
+            <input type="number" id="semesters" placeholder="Enter number of semesters">
+            <button id="addSemesters">Add Semesters</button>
+            <div id="cgpaInputs"></div>
+            <p id="cgpaResult"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
